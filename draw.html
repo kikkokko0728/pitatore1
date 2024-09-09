@@ -7,45 +7,23 @@
     <style>
         body {
             margin: 0;
-            position: relative;
-        }
-        #imageContainer {
-            position: relative;
-            z-index: 1;
-        }
-        #imageContainer img {
-            display: block;
-            width: 50%;
-            height: auto;
         }
         canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 2;
-            background-color: transparent; /* 背景を透明に */
+            display: block;
+            background-color: #f0f0f0;
         }
     </style>
 </head>
 <body>
-    <!-- GitHub上の画像を表示 -->
-    <div id="imageContainer">
-        <img src="https://github.com/kikkokko0728/pitatore1/raw/main/question.png" alt="Question Image">
-    </div>
-
-    <!-- キャンバスを画像の上に配置 -->
     <canvas id="drawingCanvas"></canvas>
 
     <script>
         const canvas = document.getElementById('drawingCanvas');
         const ctx = canvas.getContext('2d');
         
-        // キャンバスを画像の上に全画面表示
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        resizeCanvas();
+        // キャンバスを全画面に設定
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
 
         // 描画設定
         ctx.strokeStyle = 'red';
@@ -76,7 +54,10 @@
         });
 
         // ウィンドウサイズ変更時にキャンバスサイズを更新
-        window.addEventListener('resize', resizeCanvas);
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
     </script>
 </body>
 </html>
