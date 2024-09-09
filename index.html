@@ -15,7 +15,7 @@
         }
         #imageContainer img {
             display: block;
-            width: 50%;
+            width: 100%;
             height: auto;
         }
         canvas {
@@ -28,9 +28,9 @@
     </style>
 </head>
 <body>
-    <!-- GitHub上の画像を表示 -->
+    <!-- デスクトップ上の画像を表示 -->
     <div id="imageContainer">
-        <img src="https://github.com/kikkokko0728/pitatore1/blob/22b6d7a68923f0bc7fa792b9d229e2666a7e3219/question.png" alt="Question Image">
+        <img src="C:/Users/YourUsername/Desktop/question.png" alt="Question Image">
     </div>
 
     <!-- キャンバスを画像の上に配置 -->
@@ -49,7 +49,7 @@
 
         // 描画設定
         ctx.strokeStyle = 'red';
-        ctx.lineWidth = 4;
+        ctx.lineWidth = 2;
         ctx.lineCap = 'round';
 
         let isDrawing = false;
